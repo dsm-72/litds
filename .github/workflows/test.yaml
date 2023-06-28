@@ -5,6 +5,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Set SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL
+        run: echo "SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True" >> $GITHUB_ENV
       - uses: fastai/workflows/nbdev-ci@master
         with:
           version: '3.11'
