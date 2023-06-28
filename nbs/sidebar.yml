@@ -1,0 +1,97 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - 00_types.ipynb
+      - 01_utils.ipynb
+      - XX_template.ipynb
+      - section: abc
+        contents:
+          - section: dfdm
+            contents:
+              - abc/dfdm/00_meta.ipynb
+      - section: abc
+        contents:
+          - section: dfdm
+            contents:
+              - abc/dfdm/01_base.ipynb
+      - section: abc
+        contents:
+          - section: dfds
+            contents:
+              - abc/dfds/00_meta.ipynb
+      - section: abc
+        contents:
+          - section: dfds
+            contents:
+              - abc/dfds/01_mixs.ipynb
+      - section: abc
+        contents:
+          - section: dfds
+            contents:
+              - abc/dfds/02_base.ipynb
+      - section: abc
+        contents:
+          - section: idxs
+            contents:
+              - abc/idxs/00_meta.ipynb
+      - section: abc
+        contents:
+          - section: idxs
+            contents:
+              - abc/idxs/01_base.ipynb
+      - section: abc
+        contents:
+          - section: idxs
+            contents:
+              - abc/idxs/03_loc.ipynb
+      - section: abc
+        contents:
+          - section: idxs
+            contents:
+              - abc/idxs/04_iloc.ipynb
+      - section: abc
+        contents:
+          - section: idxs
+            contents:
+              - abc/idxs/05_cloc.ipynb
+      - section: abc
+        contents:
+          - section: idxs
+            contents:
+              - abc/idxs/06__init__.ipynb
+      - section: abc
+        contents:
+          - section: mock
+            contents:
+              - abc/mock/00_meta.ipynb
+      - section: abc
+        contents:
+          - section: mock
+            contents:
+              - abc/mock/01_base.ipynb
+      - section: core
+        contents:
+          - core/00_dfds.ipynb
+          - core/01_dfdm.ipynb
+      - section: datasets
+        contents:
+          - datasets/00_diamonds.ipynb
+          - datasets/01_orbits.ipynb
+          - datasets/02_embryoid.ipynb
+      - section: fetch
+        contents:
+          - fetch/08_pbmc.ipynb
+      - section: mocks
+        contents:
+          - mocks/00_time.ipynb
+          - mocks/01_adata.ipynb
+      - section: named
+        contents:
+          - named/03_named_arrays.ipynb
+          - named/04_trajectories.ipynb
+      - section: time
+        contents:
+          - time/00_mixs.ipynb
+          - time/01_base.ipynb
+          - time/01_series.ipynb
