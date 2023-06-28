@@ -9,7 +9,9 @@ import requests, tarfile, gzip, shutil
 
 import numpy as np, pandas as pd
 import torch, torch.nn as nn, pytorch_lightning as pl
-import scprep, scanpy as sc, anndata as ad
+import scprep, anndata as ad
+
+# import scanpy as sc
 
 import phate
 
