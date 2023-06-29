@@ -13,7 +13,7 @@ from .types import DataFrame, DatasetSplitSpec, SplitDatasets
 def random_split_dataframe(
     df: DataFrame,  
     splits: DatasetSplitSpec,
-    as_dataframes: bool=False,
+    as_dataframes: bool = False,
 ) -> SplitDatasets:
     
     subsets = torch.utils.data.random_split(df, splits)    

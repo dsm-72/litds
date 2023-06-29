@@ -9,12 +9,11 @@ import requests, tarfile, gzip, shutil
 
 import numpy as np, pandas as pd
 import torch, torch.nn as nn, pytorch_lightning as pl
-import scprep, anndata as ad
+# import scprep, anndata as ad
 
 # import scanpy as sc
 
 import phate
-
 import matplotlib as mpl, matplotlib.pyplot as plt, seaborn as sns
 
 # %% ../../nbs/fetch/08_pbmc.ipynb 5
@@ -47,6 +46,7 @@ LEVEL_SENSITIVITY = 1
 
 # %% ../../nbs/fetch/08_pbmc.ipynb 8
 from ..utils import (random_split_dataframe)
+from ..imps import AdataImp
 
 # %% ../../nbs/fetch/08_pbmc.ipynb 10
 AMAZON_BUCKET = 'https://fbs-public.s3.us-east-2.amazonaws.com'
@@ -63,16 +63,11 @@ FILTERED_MATRIX_FILES = (
     FilterMatrixDirectory.MATRIX_FILE
 )
 
-# %% ../../nbs/fetch/08_pbmc.ipynb 13
+# %% ../../nbs/fetch/08_pbmc.ipynb 12
 @dataclass
 class FluentBioPBMC2023:
     data_dir: str = os.path.expanduser('~/Downloads/fluentbio_pbmc')
  
-    _: KW_ONLY
-    perc_train: float = 0.7
-    perc_valid: float = 0.1
-    perc_test: float = 0.2
-
     AMAZON_BUCKET: ClassVar[str] = AMAZON_BUCKET
     REPORT_LINK: ClassVar[str] = REPORT_LINK
     FILTERED_MATRIX_LINK: ClassVar[str] = FILTERED_MATRIX_LINK
@@ -81,6 +76,7 @@ class FluentBioPBMC2023:
     FILTERED_MATRIX_FILES: ClassVar[Tuple[str]] = FILTERED_MATRIX_FILES
 
     def __post_init__(self):
+        AdataImp()
         make_missing_dirs(self.data_dir)
 
     @property

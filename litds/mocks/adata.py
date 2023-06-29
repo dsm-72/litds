@@ -19,6 +19,9 @@ from iza.static import TIME, SERIES, PHATE, BARCODE, CONDITION
 from ..abc.mock.base import BaseMock
 
 # %% ../../nbs/mocks/01_adata.ipynb 8
+from ..imps import AdataImp
+
+# %% ../../nbs/mocks/01_adata.ipynb 9
 @dataclass
 class MockSingleCell(BaseMock):
     label_col: Optional[str] = BARCODE
@@ -41,6 +44,7 @@ class MockSingleCell(BaseMock):
         return self.adata
 
     def __post_init__(self):
+        AdataImp()
         np.random.seed(self.seed)
         adata = self.setup()
         self.adata = adata

@@ -4,6 +4,7 @@ website:
       - index.ipynb
       - 00_types.ipynb
       - 01_utils.ipynb
+      - 02_imps.ipynb
       - XX_template.ipynb
       - section: abc
         contents:
