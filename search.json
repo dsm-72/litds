@@ -1,0 +1,422 @@
+[
+  {
+    "objectID": "utils.html",
+    "href": "utils.html",
+    "title": "utils",
+    "section": "",
+    "text": "source\n\nrandom_split_dataframe\n\n random_split_dataframe (df:pandas.core.frame.DataFrame, splits:Union[iza.\n                         types.TrainValidSplit,iza.types.TrainTestSplit,iz\n                         a.types.TrainValidTestSplit,List[numbers.Number],\n                         Tuple[numbers.Number,numbers.Number],Tuple[number\n                         s.Number,numbers.Number,numbers.Number]],\n                         as_dataframes:bool=False)"
+  },
+  {
+    "objectID": "named/trajectories.html",
+    "href": "named/trajectories.html",
+    "title": "Trajectories",
+    "section": "",
+    "text": "from litds.named.arr import (\n    NamedArray, NamedAxes, NamedAxis, NamedArrayDynamicAttrsMixin\n)\n\n\nsource\n\nTrajectoryDim\n\n TrajectoryDim (value, names=None, module=None, qualname=None, type=None,\n                start=1, boundary=None)\n\nCreate a collection of name/value pairs.\nExample enumeration:\n\n\n\nclass Color(Enum): … RED = 1 … BLUE = 2 … GREEN = 3\n\n\n\nAccess them by:\n\nattribute access::\n\n\n\n\nColor.RED &lt;Color.RED: 1&gt;\n\n\n\n\nvalue lookup:\n\n\n\n\nColor(1) &lt;Color.RED: 1&gt;\n\n\n\n\nname lookup:\n\n\n\n\nColor[‘RED’] &lt;Color.RED: 1&gt;\n\n\n\nEnumerations can be iterated over, and know how many members they have:\n\n\n\nlen(Color) 3\n\n\n\n\n\n\nlist(Color) [&lt;Color.RED: 1&gt;, &lt;Color.BLUE: 2&gt;, &lt;Color.GREEN: 3&gt;]\n\n\n\nMethods can be added to enumerations, and members can have their own attributes – see the documentation for details.\n\nsource\n\n\nGeneTrajectoryDim\n\n GeneTrajectoryDim (value, names=None, module=None, qualname=None,\n                    type=None, start=1, boundary=None)\n\nCreate a collection of name/value pairs.\nExample enumeration:\n\n\n\nclass Color(Enum): … RED = 1 … BLUE = 2 … GREEN = 3\n\n\n\nAccess them by:\n\nattribute access::\n\n\n\n\nColor.RED &lt;Color.RED: 1&gt;\n\n\n\n\nvalue lookup:\n\n\n\n\nColor(1) &lt;Color.RED: 1&gt;\n\n\n\n\nname lookup:\n\n\n\n\nColor[‘RED’] &lt;Color.RED: 1&gt;\n\n\n\nEnumerations can be iterated over, and know how many members they have:\n\n\n\nlen(Color) 3\n\n\n\n\n\n\nlist(Color) [&lt;Color.RED: 1&gt;, &lt;Color.BLUE: 2&gt;, &lt;Color.GREEN: 3&gt;]\n\n\n\nMethods can be added to enumerations, and members can have their own attributes – see the documentation for details.\n\nsource\n\n\nFeatureTrajectories\n\n FeatureTrajectories (arr, dims:litds.named.arr.NamedAxes=None)\n\nSee: https://numpy.org/doc/stable/user/basics.subclassing.html\n\nsource\n\n\nObservationTrajectories\n\n ObservationTrajectories (arr, dims:litds.named.arr.NamedAxes=None)\n\nSee: https://numpy.org/doc/stable/user/basics.subclassing.html\n\nsource\n\n\nExpressionTrajectories\n\n ExpressionTrajectories (arr, dims:litds.named.arr.NamedAxes=None)\n\nSee: https://numpy.org/doc/stable/user/basics.subclassing.html\n\nsource\n\n\nCellularTrajectories\n\n CellularTrajectories (arr, dims:litds.named.arr.NamedAxes=None)\n\nSee: https://numpy.org/doc/stable/user/basics.subclassing.html\n\nsource\n\n\nTrajectories\n\n Trajectories (arr, dims:litds.named.arr.NamedAxes=None)\n\nSee: https://numpy.org/doc/stable/user/basics.subclassing.html\n\nsource\n\n\nGeneTrajectories\n\n GeneTrajectories (*args, **kwargs)\n\nSee: https://numpy.org/doc/stable/user/basics.subclassing.html"
+  },
+  {
+    "objectID": "core/dfds.html",
+    "href": "core/dfds.html",
+    "title": "DataFrameDataset",
+    "section": "",
+    "text": "df = MockTimeSeries(set_index=True).df\ndf.head()"
+  },
+  {
+    "objectID": "core/dfds.html#dataframedataset",
+    "href": "core/dfds.html#dataframedataset",
+    "title": "DataFrameDataset",
+    "section": "DataFrameDataset",
+    "text": "DataFrameDataset\n\nDataFrameDatasetMixin\n\nsource\n\n\nDataFrameDatasetMixin\n\n DataFrameDatasetMixin (*args, **kwargs)\n\n\n\nDataFrameDataset\n\nsource\n\n\nDataFrameDataset\n\n DataFrameDataset (*args, **kwargs)\n\n\nExample\n\ndfs = DataFrameDataset(df.reset_index().drop(columns='series', errors='ignore'), label_key='time')\n\n\ndfs.y_uni"
+  },
+  {
+    "objectID": "abc/dfdm/meta.html",
+    "href": "abc/dfdm/meta.html",
+    "title": "MetaDataFrameDataModule",
+    "section": "",
+    "text": "source\n\n\n\n MetaDataFrameDataModule (name, bases, namespace, **kwargs)\n\nMetaclass for defining Abstract Base Classes (ABCs).\nUse this metaclass to create an ABC. An ABC can be subclassed directly, and then acts as a mix-in class. You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as ‘virtual subclasses’ – these and their descendants will be considered subclasses of the registering ABC by the built-in issubclass() function, but the registering ABC won’t show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via super())."
+  },
+  {
+    "objectID": "abc/dfdm/meta.html#datamodules",
+    "href": "abc/dfdm/meta.html#datamodules",
+    "title": "MetaDataFrameDataModule",
+    "section": "",
+    "text": "source\n\n\n\n MetaDataFrameDataModule (name, bases, namespace, **kwargs)\n\nMetaclass for defining Abstract Base Classes (ABCs).\nUse this metaclass to create an ABC. An ABC can be subclassed directly, and then acts as a mix-in class. You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as ‘virtual subclasses’ – these and their descendants will be considered subclasses of the registering ABC by the built-in issubclass() function, but the registering ABC won’t show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via super())."
+  },
+  {
+    "objectID": "abc/idxs/loc.html",
+    "href": "abc/idxs/loc.html",
+    "title": "BaseDataFrameDatasetIndexer",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameDatasetLocIndexer (dataset:Any)"
+  },
+  {
+    "objectID": "abc/idxs/loc.html#dataframedatasetlocindexer",
+    "href": "abc/idxs/loc.html#dataframedatasetlocindexer",
+    "title": "BaseDataFrameDatasetIndexer",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameDatasetLocIndexer (dataset:Any)"
+  },
+  {
+    "objectID": "abc/idxs/cloc.html",
+    "href": "abc/idxs/cloc.html",
+    "title": "DataFrameDatasetCLocIndex",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameDatasetCLocIndexer (dataset:Any)\n\nNOTE: what is the difference between loc and cloc? Afterall loc can handle both integer and string indexing, either with repeated values. So why do we need cloc? Well we might not know what the categorical value is (if it is a string label). So we extract the catgories from the index and then assume that the index is working on the categories rather than the index. We then use the categories (labels) to work with df.loc."
+  },
+  {
+    "objectID": "abc/idxs/cloc.html#dataframedatasetclocindex",
+    "href": "abc/idxs/cloc.html#dataframedatasetclocindex",
+    "title": "DataFrameDatasetCLocIndex",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameDatasetCLocIndexer (dataset:Any)\n\nNOTE: what is the difference between loc and cloc? Afterall loc can handle both integer and string indexing, either with repeated values. So why do we need cloc? Well we might not know what the categorical value is (if it is a string label). So we extract the catgories from the index and then assume that the index is working on the categories rather than the index. We then use the categories (labels) to work with df.loc."
+  },
+  {
+    "objectID": "abc/idxs/iloc.html",
+    "href": "abc/idxs/iloc.html",
+    "title": "Dataset Indexers",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameDatasetILocIndexer (dataset:Any)"
+  },
+  {
+    "objectID": "abc/idxs/iloc.html#ilocindex",
+    "href": "abc/idxs/iloc.html#ilocindex",
+    "title": "Dataset Indexers",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameDatasetILocIndexer (dataset:Any)"
+  },
+  {
+    "objectID": "abc/dfds/meta.html",
+    "href": "abc/dfds/meta.html",
+    "title": "MetaDataFrameDataset",
+    "section": "",
+    "text": "source\n\n\n\n MetaDataFrameDataset (name, bases, namespace, **kwargs)\n\nMetaclass for defining Abstract Base Classes (ABCs).\nUse this metaclass to create an ABC. An ABC can be subclassed directly, and then acts as a mix-in class. You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as ‘virtual subclasses’ – these and their descendants will be considered subclasses of the registering ABC by the built-in issubclass() function, but the registering ABC won’t show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via super())."
+  },
+  {
+    "objectID": "abc/dfds/meta.html#metadataframedataset",
+    "href": "abc/dfds/meta.html#metadataframedataset",
+    "title": "MetaDataFrameDataset",
+    "section": "",
+    "text": "source\n\n\n\n MetaDataFrameDataset (name, bases, namespace, **kwargs)\n\nMetaclass for defining Abstract Base Classes (ABCs).\nUse this metaclass to create an ABC. An ABC can be subclassed directly, and then acts as a mix-in class. You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as ‘virtual subclasses’ – these and their descendants will be considered subclasses of the registering ABC by the built-in issubclass() function, but the registering ABC won’t show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via super())."
+  },
+  {
+    "objectID": "abc/dfds/mixs.html",
+    "href": "abc/dfds/mixs.html",
+    "title": "Dataset Base and Meta",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameArgsMixin (df:pandas.core.frame.DataFrame=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n DataFrameKWArgsMixins ()\n\nHelper methods for getting the arguments used to construct the class"
+  },
+  {
+    "objectID": "abc/dfds/mixs.html#mixins",
+    "href": "abc/dfds/mixs.html#mixins",
+    "title": "Dataset Base and Meta",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameArgsMixin (df:pandas.core.frame.DataFrame=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n DataFrameKWArgsMixins ()\n\nHelper methods for getting the arguments used to construct the class"
+  },
+  {
+    "objectID": "abc/mock/base.html",
+    "href": "abc/mock/base.html",
+    "title": "Dataset Mocks",
+    "section": "",
+    "text": "source\n\n\n\n\n BaseMock (seed:Optional[int]=3, set_index:Optional[bool]=False)"
+  },
+  {
+    "objectID": "abc/mock/base.html#mock",
+    "href": "abc/mock/base.html#mock",
+    "title": "Dataset Mocks",
+    "section": "",
+    "text": "source\n\n\n\n\n BaseMock (seed:Optional[int]=3, set_index:Optional[bool]=False)"
+  },
+  {
+    "objectID": "datasets/diamonds.html",
+    "href": "datasets/diamonds.html",
+    "title": "DiamondsDataset and DiamondsDataModule",
+    "section": "",
+    "text": "source\n\n\n\n create_diamonds_dataframe (n_diamonds:int=5, n_points:int=400,\n                            width:numbers.Number=1,\n                            length:numbers.Number=1,\n                            noise_level:float=0.0,\n                            label_by_distance:bool=True,\n                            n_classes:Optional[int]=5,\n                            label_key:str='label', use_index:bool=True)\n\n\nsource\n\n\n\n\n create_diamonds_dataset (n_diamonds:int, n_points:int,\n                          width:numbers.Number=1, length:numbers.Number=1,\n                          noise_level:float=0.0,\n                          label_by_distance:bool=True,\n                          n_classes:Optional[int]=5)\n\n\nsource\n\n\n\n\n categorize_distances (distances:NDArray[Shape['*'],Float], n_classes:int)\n\nCategorizes distances into n_classes classes.\n\nsource\n\n\n\n\n distance_from_origin (points:NDArray[Shape['*,[x,y]'],Float])\n\nCalculates distance of points from the origin.\n\nsource\n\n\n\n\n rotate_diamond (diamond:NDArray[Shape['*,[x,y]'],Float],\n                 rotation_angle:float)\n\nRotates a diamond by a given angle.\n\nsource\n\n\n\n\n make_diamond (n_points:int, width:numbers.Number=1,\n               length:numbers.Number=1)\n\nGenerates the four vertices of a diamond.\n\nsource\n\n\n\n\n make_diamond_quadrant (n_points:int, width:numbers.Number=1,\n                        length:numbers.Number=1, is_left_half:bool=True,\n                        is_top_half:bool=True)\n\nGenerates a diamond quadrant.\nArgs: n_points: number of points in the quadrant is_left_half: whether the quadrant is on the left half of the diamond is_top_half: whether the quadrant is on the top half of the diamond width: width of the diamond length: length of the diamond\nReturns: quadrant: the quadrant as a numpy array of shape (n_points, 2)\n\ndf = create_diamonds_dataframe(5, 400, .5, 1, noise_level=.025, label_by_distance=True, n_classes=4)\ndf.head()\n\n\n\n\n\n\n\n\nx\ny\n\n\nlabel\n\n\n\n\n\n\n1\n-0.257013\n0.497711\n\n\n1\n-0.210087\n0.483057\n\n\n2\n-0.255584\n0.510315\n\n\n1\n-0.201599\n0.507479\n\n\n2\n-0.236849\n0.551901\n\n\n\n\n\n\n\n\nplt.figure(figsize=(4, 4))\nsns.scatterplot(data=df, x='x', y='y', hue='label', palette='Set2')\nplt.show()"
+  },
+  {
+    "objectID": "datasets/diamonds.html#functions",
+    "href": "datasets/diamonds.html#functions",
+    "title": "DiamondsDataset and DiamondsDataModule",
+    "section": "",
+    "text": "source\n\n\n\n create_diamonds_dataframe (n_diamonds:int=5, n_points:int=400,\n                            width:numbers.Number=1,\n                            length:numbers.Number=1,\n                            noise_level:float=0.0,\n                            label_by_distance:bool=True,\n                            n_classes:Optional[int]=5,\n                            label_key:str='label', use_index:bool=True)\n\n\nsource\n\n\n\n\n create_diamonds_dataset (n_diamonds:int, n_points:int,\n                          width:numbers.Number=1, length:numbers.Number=1,\n                          noise_level:float=0.0,\n                          label_by_distance:bool=True,\n                          n_classes:Optional[int]=5)\n\n\nsource\n\n\n\n\n categorize_distances (distances:NDArray[Shape['*'],Float], n_classes:int)\n\nCategorizes distances into n_classes classes.\n\nsource\n\n\n\n\n distance_from_origin (points:NDArray[Shape['*,[x,y]'],Float])\n\nCalculates distance of points from the origin.\n\nsource\n\n\n\n\n rotate_diamond (diamond:NDArray[Shape['*,[x,y]'],Float],\n                 rotation_angle:float)\n\nRotates a diamond by a given angle.\n\nsource\n\n\n\n\n make_diamond (n_points:int, width:numbers.Number=1,\n               length:numbers.Number=1)\n\nGenerates the four vertices of a diamond.\n\nsource\n\n\n\n\n make_diamond_quadrant (n_points:int, width:numbers.Number=1,\n                        length:numbers.Number=1, is_left_half:bool=True,\n                        is_top_half:bool=True)\n\nGenerates a diamond quadrant.\nArgs: n_points: number of points in the quadrant is_left_half: whether the quadrant is on the left half of the diamond is_top_half: whether the quadrant is on the top half of the diamond width: width of the diamond length: length of the diamond\nReturns: quadrant: the quadrant as a numpy array of shape (n_points, 2)\n\ndf = create_diamonds_dataframe(5, 400, .5, 1, noise_level=.025, label_by_distance=True, n_classes=4)\ndf.head()\n\n\n\n\n\n\n\n\nx\ny\n\n\nlabel\n\n\n\n\n\n\n1\n-0.257013\n0.497711\n\n\n1\n-0.210087\n0.483057\n\n\n2\n-0.255584\n0.510315\n\n\n1\n-0.201599\n0.507479\n\n\n2\n-0.236849\n0.551901\n\n\n\n\n\n\n\n\nplt.figure(figsize=(4, 4))\nsns.scatterplot(data=df, x='x', y='y', hue='label', palette='Set2')\nplt.show()"
+  },
+  {
+    "objectID": "datasets/diamonds.html#dataset",
+    "href": "datasets/diamonds.html#dataset",
+    "title": "DiamondsDataset and DiamondsDataModule",
+    "section": "Dataset",
+    "text": "Dataset\n\nsource\n\nDiamondsDataset\n\n DiamondsDataset (*args, **kwargs)\n\n\ndd = DiamondsDataset()\ndd.getone()\n\n(tensor([[-0.1185,  0.1044],\n         [-0.0352, -0.2834],\n         [ 0.3732,  0.3249],\n         [ 0.5480, -0.4628],\n         [ 0.5855, -0.6958]]),\n tensor([0., 1., 2., 3., 4.]))\n\n\n\ndd.plot(palette='mako_r')"
+  },
+  {
+    "objectID": "datasets/diamonds.html#datamodule",
+    "href": "datasets/diamonds.html#datamodule",
+    "title": "DiamondsDataset and DiamondsDataModule",
+    "section": "DataModule",
+    "text": "DataModule\n\nsource\n\nDiamondsDataModule\n\n DiamondsDataModule (df:pandas.core.frame.DataFrame=&lt;factory&gt;,\n                     n_diamonds:int=5, n_points:int=400,\n                     width:numbers.Number=0.5, length:numbers.Number=1,\n                     noise_level:float=0.025, label_by_distance:bool=True,\n                     n_classes:Optional[int]=5, perc_train:float=0.7,\n                     perc_valid:float=0.1, perc_test:float=0.2,\n                     include_time:Optional[bool]=False,\n                     device:Optional[littyping.device.Device]=None)\n\n\n\nExample\n\nddm = DiamondsDataModule()\n\n\nddm.prepare_data()\n\nDiamondsDataModule(n_diamonds=5, n_points=400, width=0.5, length=1, noise_level=0.025, label_by_distance=True, n_classes=5, perc_train=0.7, perc_valid=0.1, perc_test=0.2, include_time=False, device=None)\n\n\n\nddm.setup()\n\n\ntrain_dl = ddm.train_dataloader()\n\n\nfor batch in train_dl:\n    break\nbatch[0].shape, batch[1].shape\n\n(torch.Size([64, 5, 2]), torch.Size([64, 5]))\n\n\n\nlen(ddm.idxs_train), len(ddm.idxs_valid), len(ddm.idxs_test)\n\n(1400, 200, 400)\n\n\n\nddm.train_ds.df.shape\n\n(2000, 3)"
+  },
+  {
+    "objectID": "mocks/time.html",
+    "href": "mocks/time.html",
+    "title": "Dataset Mocks",
+    "section": "",
+    "text": "source\n\n\n\n\n MockTimeSeries (n_series:int=5, n_features:int=3,\n                 series_key:Optional[str]='series',\n                 time_key:Optional[str]='time', max_t:Optional[int]=10,\n                 max_int:Optional[bool]=10, max_rows:Optional[int]=None,\n                 use_int_features:Optional[bool]=True,\n                 seed:Optional[int]=3, set_index:Optional[bool]=False)\n\n\nmock = MockTimeSeries(set_index=True)\nmock.df.head()\n\n\n\n\n\n\n\n\ntime\nfeature_0\nfeature_1\nfeature_2\n\n\nseries\n\n\n\n\n\n\n\n\n0\n0\n4\n8\n0\n\n\n0\n1\n0\n0\n0\n\n\n0\n2\n0\n2\n2\n\n\n0\n3\n6\n0\n4\n\n\n0\n4\n7\n4\n3"
+  },
+  {
+    "objectID": "mocks/time.html#mock",
+    "href": "mocks/time.html#mock",
+    "title": "Dataset Mocks",
+    "section": "",
+    "text": "source\n\n\n\n\n MockTimeSeries (n_series:int=5, n_features:int=3,\n                 series_key:Optional[str]='series',\n                 time_key:Optional[str]='time', max_t:Optional[int]=10,\n                 max_int:Optional[bool]=10, max_rows:Optional[int]=None,\n                 use_int_features:Optional[bool]=True,\n                 seed:Optional[int]=3, set_index:Optional[bool]=False)\n\n\nmock = MockTimeSeries(set_index=True)\nmock.df.head()\n\n\n\n\n\n\n\n\ntime\nfeature_0\nfeature_1\nfeature_2\n\n\nseries\n\n\n\n\n\n\n\n\n0\n0\n4\n8\n0\n\n\n0\n1\n0\n0\n0\n\n\n0\n2\n0\n2\n2\n\n\n0\n3\n6\n0\n4\n\n\n0\n4\n7\n4\n3"
+  },
+  {
+    "objectID": "time/mixs.html",
+    "href": "time/mixs.html",
+    "title": "Time Mixins",
+    "section": "",
+    "text": "df = MockTimeSeries(set_index=True).df\ndf.head()\n\n\n\n\n\n\n\n\ntime\nfeature_0\nfeature_1\nfeature_2\n\n\nseries\n\n\n\n\n\n\n\n\n0\n0\n4\n8\n0\n\n\n0\n1\n0\n0\n0\n\n\n0\n2\n0\n2\n2\n\n\n0\n3\n6\n0\n4\n\n\n0\n4\n7\n4\n3"
+  },
+  {
+    "objectID": "time/mixs.html#timedatasetmixin",
+    "href": "time/mixs.html#timedatasetmixin",
+    "title": "Time Mixins",
+    "section": "TimeDatasetMixin",
+    "text": "TimeDatasetMixin\n\nsource\n\nTimeDatasetMixin\n\n TimeDatasetMixin (df:pandas.core.frame.DataFrame=&lt;factory&gt;,\n                   time_key:str='time', include_time:Optional[bool]=False,\n                   device:Optional[littyping.device.Device]=None)"
+  },
+  {
+    "objectID": "time/base.html",
+    "href": "time/base.html",
+    "title": "Base TimeDataset and TimeDataModule",
+    "section": "",
+    "text": "df = MockTimeSeries(set_index=True).df\ndf.head()\n\n\n\n\n\n\n\n\ntime\nfeature_0\nfeature_1\nfeature_2\n\n\nseries\n\n\n\n\n\n\n\n\n0\n0\n4\n8\n0\n\n\n0\n1\n0\n0\n0\n\n\n0\n2\n0\n2\n2\n\n\n0\n3\n6\n0\n4\n\n\n0\n4\n7\n4\n3"
+  },
+  {
+    "objectID": "time/base.html#timedataset",
+    "href": "time/base.html#timedataset",
+    "title": "Base TimeDataset and TimeDataModule",
+    "section": "TimeDataset",
+    "text": "TimeDataset\n\nsource\n\nTimeDataset\n\n TimeDataset (df:pandas.core.frame.DataFrame=&lt;factory&gt;,\n              time_key:str='time', include_time:Optional[bool]=False,\n              device:Optional[littyping.device.Device]=None)"
+  },
+  {
+    "objectID": "time/base.html#timedatamodule",
+    "href": "time/base.html#timedatamodule",
+    "title": "Base TimeDataset and TimeDataModule",
+    "section": "TimeDataModule",
+    "text": "TimeDataModule\n\nsource\n\nTimeDataModule\n\n TimeDataModule (df:pandas.core.frame.DataFrame=&lt;factory&gt;)\n\n\n\nExample\n\ndf = MockTimeSeries(set_index=True).df\ndf = df.head().reset_index().drop(columns='series')\n\n\ntdm = TimeDataModule(df)\n\n\ntdm.df"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "litds",
+    "section": "",
+    "text": "# create conda environment\n$ mamba env create -f env.yml\n\n# update conda environment\n$ mamba env update -n litds --file env.yml\n\n\n\npip install -e .\n\n# install from pypi\npip install litds\n\n\n\n# activate conda environment\n$ conda activate litds\n\n# make sure the litds package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to the litds package\n$ nbdev_prepare\n\n\n\n# publish to pypi\n$ nbdev_pypi\n\n# publish to conda\n$ nbdev_conda --build_args '-c conda-forge'\n# $ nbdev_conda --mambabuild --build_args '-c conda-forge -c pytorch -c bioconda -c dsm-72'"
+  },
+  {
+    "objectID": "index.html#developer-guide",
+    "href": "index.html#developer-guide",
+    "title": "litds",
+    "section": "",
+    "text": "# create conda environment\n$ mamba env create -f env.yml\n\n# update conda environment\n$ mamba env update -n litds --file env.yml\n\n\n\npip install -e .\n\n# install from pypi\npip install litds\n\n\n\n# activate conda environment\n$ conda activate litds\n\n# make sure the litds package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to the litds package\n$ nbdev_prepare\n\n\n\n# publish to pypi\n$ nbdev_pypi\n\n# publish to conda\n$ nbdev_conda --build_args '-c conda-forge'\n# $ nbdev_conda --mambabuild --build_args '-c conda-forge -c pytorch -c bioconda -c dsm-72'"
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "litds",
+    "section": "Installation",
+    "text": "Installation\nInstall latest from the GitHub repository:\n$ pip install git+https://github.com/dsm-72/litds.git\nor from conda\n$ conda install -c dsm-72 litds\nor from pypi\n$ pip install litds"
+  },
+  {
+    "objectID": "index.html#documentation",
+    "href": "index.html#documentation",
+    "title": "litds",
+    "section": "Documentation",
+    "text": "Documentation\nDocumentation can be found hosted on GitHub repository pages. Additionally you can find package manager specific guidelines on conda and pypi respectively."
+  },
+  {
+    "objectID": "types.html#litdata-types",
+    "href": "types.html#litdata-types",
+    "title": "LitDS Types",
+    "section": "LitData types",
+    "text": "LitData types\n\nSimple Aliases\n\n\nNumPy Types\n\n\nTensor Types"
+  },
+  {
+    "objectID": "fetch/pbmc.html#fluentbio-download",
+    "href": "fetch/pbmc.html#fluentbio-download",
+    "title": "FluentBio PBMC",
+    "section": "FluentBio Download",
+    "text": "FluentBio Download\n\nsource\n\nFluentBioPBMC2023\n\n FluentBioPBMC2023 (data_dir:str='/home/runner/Downloads/fluentbio_pbmc')\n\n\ndata_dir = os.path.expanduser('~/Downloads/fluentbio_pbmc')\nfb_pmbc = FluentBioPBMC2023(data_dir=data_dir)\n\n\nfb_pmbc.prepare()"
+  },
+  {
+    "objectID": "fetch/pbmc.html#archiver",
+    "href": "fetch/pbmc.html#archiver",
+    "title": "FluentBio PBMC",
+    "section": "Archiver",
+    "text": "Archiver\n\nfrom iza.utils import ArchiveDownloader\nfrom iza.static import AMAZON_BUCKET_FLUENTBIO\n\ndownloader = ArchiveDownloader(\n    rootdir = AMAZON_BUCKET_FLUENTBIO,\n    archive = 'public-datasets/pbmc/',\n    entries = ['combined.html', 'filtered_matrix.tar.gz'],\n    savedir = '~/Downloads/test',  extract=True, cleanup=True\n)\ndownloader.execute()"
+  },
+  {
+    "objectID": "time/series.html",
+    "href": "time/series.html",
+    "title": "TimeSeriesDataset and TimeSeriesDataModule",
+    "section": "",
+    "text": "df = MockTimeSeries(set_index=True).df\ndf.head()\n\n\n\n\n\n\n\n\ntime\nfeature_0\nfeature_1\nfeature_2\n\n\nseries\n\n\n\n\n\n\n\n\n0\n0\n4\n8\n0\n\n\n0\n1\n0\n0\n0\n\n\n0\n2\n0\n2\n2\n\n\n0\n3\n6\n0\n4\n\n\n0\n4\n7\n4\n3"
+  },
+  {
+    "objectID": "time/series.html#timeseriesdataset",
+    "href": "time/series.html#timeseriesdataset",
+    "title": "TimeSeriesDataset and TimeSeriesDataModule",
+    "section": "TimeSeriesDataset",
+    "text": "TimeSeriesDataset\n\nsource\n\nTimeSeriesDataset\n\n TimeSeriesDataset (df:pandas.core.frame.DataFrame=&lt;factory&gt;,\n                    time_key:str='time', series_key:str='series',\n                    pad:Optional[bool]=True,\n                    batch_first:Optional[bool]=True,\n                    include_time:Optional[bool]=False,\n                    device:Optional[littyping.device.Device]=None)\n\n\n\nExample\n\ntsd = TimeSeriesDataset(df)\n\n\ntsd[[0, 1]]\n\n(tensor([[[4., 8., 0.],\n          [0., 0., 0.],\n          [0., 2., 2.],\n          [7., 2., 1.],\n          [6., 0., 4.],\n          [7., 4., 3.],\n          [1., 5., 5.],\n          [0., 1., 4.],\n          [1., 2., 2.],\n          [7., 0., 5.]],\n \n         [[8., 4., 1.],\n          [7., 2., 1.],\n          [0., 8., 2.],\n          [0., 0., 0.],\n          [0., 0., 0.],\n          [0., 0., 0.],\n          [0., 0., 0.],\n          [0., 0., 0.],\n          [0., 0., 0.],\n          [0., 0., 0.]]]),\n tensor([10,  3]))"
+  },
+  {
+    "objectID": "time/series.html#timeseriesdatamodule",
+    "href": "time/series.html#timeseriesdatamodule",
+    "title": "TimeSeriesDataset and TimeSeriesDataModule",
+    "section": "TimeSeriesDataModule",
+    "text": "TimeSeriesDataModule\n\nsource\n\nTimeSeriesDataModule\n\n TimeSeriesDataModule (df:pandas.core.frame.DataFrame=&lt;factory&gt;)\n\n\n\nExample\n\ntsdm = TimeSeriesDataModule(df)"
+  },
+  {
+    "objectID": "mocks/adata.html",
+    "href": "mocks/adata.html",
+    "title": "Dataset Mocks",
+    "section": "",
+    "text": "source\n\n\n\n\n MockSingleCell (label_col:Optional[str]='barcode',\n                 condition_col:Optional[str]='condition',\n                 norm_str:Optional[str]='magic',\n                 n_genes:Optional[int]=100, n_points:Optional[int]=1000,\n                 emb_name:Optional[str]='phate', emb_dims:Optional[int]=3,\n                 n_conditions:Optional[int]=4, hvg_ratio:Optional[int]=5,\n                 seed:Optional[int]=3, set_index:Optional[bool]=False)\n\n\nmock = MockSingleCell()\nmock.adata\n\nAnnData object with n_obs × n_vars = 1000 × 100\n    obs: 'barcodes', 'conditions'\n    var: 'is_hvg'\n    obsm: 'X_phate'\n    layers: 'X_magic'"
+  },
+  {
+    "objectID": "mocks/adata.html#mock",
+    "href": "mocks/adata.html#mock",
+    "title": "Dataset Mocks",
+    "section": "",
+    "text": "source\n\n\n\n\n MockSingleCell (label_col:Optional[str]='barcode',\n                 condition_col:Optional[str]='condition',\n                 norm_str:Optional[str]='magic',\n                 n_genes:Optional[int]=100, n_points:Optional[int]=1000,\n                 emb_name:Optional[str]='phate', emb_dims:Optional[int]=3,\n                 n_conditions:Optional[int]=4, hvg_ratio:Optional[int]=5,\n                 seed:Optional[int]=3, set_index:Optional[bool]=False)\n\n\nmock = MockSingleCell()\nmock.adata\n\nAnnData object with n_obs × n_vars = 1000 × 100\n    obs: 'barcodes', 'conditions'\n    var: 'is_hvg'\n    obsm: 'X_phate'\n    layers: 'X_magic'"
+  },
+  {
+    "objectID": "datasets/embryoid.html#datamodule",
+    "href": "datasets/embryoid.html#datamodule",
+    "title": "Embryoid Bodies 2018",
+    "section": "DataModule",
+    "text": "DataModule\n\nsource\n\nEmbryoidBodies2018DataModule\n\n EmbryoidBodies2018DataModule (time_col:str='samples',\n                               data_dir:str='/home/runner/Downloads/embryo\n                               id_2018', batch_size:int=32,\n                               use_time_dataset:bool=True,\n                               primary:str='counts',\n                               dl_kwargs:dict[str,typing.Any]=&lt;factory&gt;,\n                               perc_train:float=0.7, perc_valid:float=0.1,\n                               perc_test:float=0.2)\n\n\neb = EmbryoidBodies2018DataModule(\n    primary='pca',\n    batch_size=8,\n)\n\n\neb.does_data_dir_exists, eb.does_sc_rna_dir_exists, eb.has_all_timepoint_dirs\n\n(True, True, True)\n\n\n\neb.setup()\n\n\n\n\nLoading data\nData ready!\n\n\n\ndl = eb.train_dataloader()\n\n\neb.train_ds.df[eb.train_ds.df.columns[-5:]].head()\n\n\n\n\n\n\n\n\nd97\nd98\nd99\nd100\nsamples\n\n\n\n\n5100\n0.881895\n-1.463558\n0.309755\n-0.156539\nDay 06-09\n\n\n15125\n1.099650\n-1.794608\n-1.442124\n-0.621449\nDay 24-27\n\n\n9431\n-1.441780\n0.068481\n2.492943\n2.289345\nDay 12-15\n\n\n13078\n-0.047084\n0.543089\n1.502882\n1.567946\nDay 18-21\n\n\n3193\n0.652287\n0.758303\n0.681693\n-0.214407\nDay 06-09\n\n\n\n\n\n\n\n\neb.train_ds.t_min, eb.train_ds.t_max\n\n(0, 4)\n\n\n\nfor x, y in dl:\n    break\nx.shape, y.shape\n\n(torch.Size([8, 5, 100]), torch.Size([8, 5]))\n\n\n\nfor x, y in eb.train_ds:\n    break\nx.shape, y.shape\n\n(torch.Size([5, 100]), torch.Size([5]))"
+  },
+  {
+    "objectID": "datasets/orbits.html",
+    "href": "datasets/orbits.html",
+    "title": "OrbitsDataset and OrbitsDataModule",
+    "section": "",
+    "text": "source\n\n\n\n create_orbits_dataframe (n_orbits:int=5, n_points:int=400,\n                          width:numbers.Number=0.2, noise_level:float=0.0,\n                          label_by_distance:bool=True,\n                          n_classes:Optional[int]=5,\n                          label_key:str='label', use_index:bool=True)\n\n\nsource\n\n\n\n\n create_orbits_dataset (n_orbits:int, n_points:int,\n                        width:numbers.Number=0.2, noise_level:float=0.0,\n                        label_by_distance:bool=True,\n                        n_classes:Optional[int]=5)\n\nGenerates a dataset of orbits.\n\nsource\n\n\n\n\n categorize_distances (distances:NDArray[Shape['*'],Float], n_classes:int)\n\nCategorizes distances into n_classes classes.\n\nsource\n\n\n\n\n distance_from_origin (points:NDArray[Shape['*,[x,y]'],Float])\n\nCalculates distance of points from the origin.\n\nsource\n\n\n\n\n rotate_orbit (orbit:NDArray[Shape['*,[x,y]'],Float],\n               rotation_angle:float)\n\nRotates an orbit by a given angle.\n\nsource\n\n\n\n\n make_orbit (n_points:int, width:numbers.Number=0.2)\n\nGenerates an orbit.\nArgs: n_points: number of points in the orbit width: width of the orbit\nReturns: orbit: the orbit as a numpy array of shape (n_points, 2)\n\ndf = create_orbits_dataframe(5, 400, .25, noise_level=.025, label_by_distance=True, n_classes=5)\ndf.head()\n\n\n\n\n\n\n\n\nx\ny\n\n\nlabel\n\n\n\n\n\n\n4\n0.986363\n0.024106\n\n\n4\n0.995865\n-0.015601\n\n\n4\n1.022529\n-0.001975\n\n\n4\n1.002284\n0.012532\n\n\n4\n0.978433\n0.003777\n\n\n\n\n\n\n\n\nplt.figure(figsize=(4, 4))\nsns.scatterplot(data=df, x='x', y='y', hue='label', palette='Set2')\nplt.show()"
+  },
+  {
+    "objectID": "datasets/orbits.html#functions",
+    "href": "datasets/orbits.html#functions",
+    "title": "OrbitsDataset and OrbitsDataModule",
+    "section": "",
+    "text": "source\n\n\n\n create_orbits_dataframe (n_orbits:int=5, n_points:int=400,\n                          width:numbers.Number=0.2, noise_level:float=0.0,\n                          label_by_distance:bool=True,\n                          n_classes:Optional[int]=5,\n                          label_key:str='label', use_index:bool=True)\n\n\nsource\n\n\n\n\n create_orbits_dataset (n_orbits:int, n_points:int,\n                        width:numbers.Number=0.2, noise_level:float=0.0,\n                        label_by_distance:bool=True,\n                        n_classes:Optional[int]=5)\n\nGenerates a dataset of orbits.\n\nsource\n\n\n\n\n categorize_distances (distances:NDArray[Shape['*'],Float], n_classes:int)\n\nCategorizes distances into n_classes classes.\n\nsource\n\n\n\n\n distance_from_origin (points:NDArray[Shape['*,[x,y]'],Float])\n\nCalculates distance of points from the origin.\n\nsource\n\n\n\n\n rotate_orbit (orbit:NDArray[Shape['*,[x,y]'],Float],\n               rotation_angle:float)\n\nRotates an orbit by a given angle.\n\nsource\n\n\n\n\n make_orbit (n_points:int, width:numbers.Number=0.2)\n\nGenerates an orbit.\nArgs: n_points: number of points in the orbit width: width of the orbit\nReturns: orbit: the orbit as a numpy array of shape (n_points, 2)\n\ndf = create_orbits_dataframe(5, 400, .25, noise_level=.025, label_by_distance=True, n_classes=5)\ndf.head()\n\n\n\n\n\n\n\n\nx\ny\n\n\nlabel\n\n\n\n\n\n\n4\n0.986363\n0.024106\n\n\n4\n0.995865\n-0.015601\n\n\n4\n1.022529\n-0.001975\n\n\n4\n1.002284\n0.012532\n\n\n4\n0.978433\n0.003777\n\n\n\n\n\n\n\n\nplt.figure(figsize=(4, 4))\nsns.scatterplot(data=df, x='x', y='y', hue='label', palette='Set2')\nplt.show()"
+  },
+  {
+    "objectID": "datasets/orbits.html#dataset",
+    "href": "datasets/orbits.html#dataset",
+    "title": "OrbitsDataset and OrbitsDataModule",
+    "section": "Dataset",
+    "text": "Dataset\n\nsource\n\nOrbitsDataset\n\n OrbitsDataset (*args, **kwargs)\n\n\ndd = OrbitsDataset()\ndd.getone()\n\n(tensor([[-0.0875, -0.1872],\n         [ 0.2494, -0.3807],\n         [-0.4403, -0.4955],\n         [ 0.7146,  0.4166],\n         [ 0.3441, -0.8967]]),\n tensor([0., 1., 2., 3., 4.]))\n\n\n\ndd.plot(palette='mako_r')"
+  },
+  {
+    "objectID": "datasets/orbits.html#datamodule",
+    "href": "datasets/orbits.html#datamodule",
+    "title": "OrbitsDataset and OrbitsDataModule",
+    "section": "DataModule",
+    "text": "DataModule\n\nsource\n\nOrbitsDataModule\n\n OrbitsDataModule (df:pandas.core.frame.DataFrame=&lt;factory&gt;,\n                   n_orbits:int=5, n_points:int=400,\n                   width:numbers.Number=0.2, noise_level:float=0.025,\n                   label_by_distance:bool=True, n_classes:Optional[int]=5,\n                   perc_train:float=0.7, perc_valid:float=0.1,\n                   perc_test:float=0.2, include_time:Optional[bool]=False,\n                   device:Optional[littyping.device.Device]=None)\n\n\n\nExample\n\nddm = OrbitsDataModule()\n\n\nddm.prepare_data()\n\nOrbitsDataModule(n_orbits=5, n_points=400, width=0.2, noise_level=0.025, label_by_distance=True, n_classes=5, perc_train=0.7, perc_valid=0.1, perc_test=0.2, include_time=False, device=None)\n\n\n\nddm.setup()\n\n\ntrain_dl = ddm.train_dataloader()\n\n\nfor batch in train_dl:\n    break\nbatch[0].shape, batch[1].shape\n\n(torch.Size([64, 5, 2]), torch.Size([64, 5]))\n\n\n\nlen(ddm.idxs_train), len(ddm.idxs_valid), len(ddm.idxs_test)\n\n(1400, 200, 400)\n\n\n\nddm.train_ds.df.shape\n\n(2000, 3)"
+  },
+  {
+    "objectID": "abc/mock/meta.html",
+    "href": "abc/mock/meta.html",
+    "title": "Dataset Mocks",
+    "section": "",
+    "text": "source\n\n\n\n\n MetaMock (name, bases, namespace, **kwargs)\n\nMetaclass for defining Abstract Base Classes (ABCs).\nUse this metaclass to create an ABC. An ABC can be subclassed directly, and then acts as a mix-in class. You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as ‘virtual subclasses’ – these and their descendants will be considered subclasses of the registering ABC by the built-in issubclass() function, but the registering ABC won’t show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via super())."
+  },
+  {
+    "objectID": "abc/mock/meta.html#mock",
+    "href": "abc/mock/meta.html#mock",
+    "title": "Dataset Mocks",
+    "section": "",
+    "text": "source\n\n\n\n\n MetaMock (name, bases, namespace, **kwargs)\n\nMetaclass for defining Abstract Base Classes (ABCs).\nUse this metaclass to create an ABC. An ABC can be subclassed directly, and then acts as a mix-in class. You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as ‘virtual subclasses’ – these and their descendants will be considered subclasses of the registering ABC by the built-in issubclass() function, but the registering ABC won’t show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via super())."
+  },
+  {
+    "objectID": "abc/dfds/base.html",
+    "href": "abc/dfds/base.html",
+    "title": "Dataset Base and Meta",
+    "section": "",
+    "text": "source\n\n\n\n BaseDataFrameDataset (df:pandas.core.frame.DataFrame=&lt;factory&gt;)\n\n\n\n\ndf = pd.DataFrame(\n    np.random.randint(0, 10, (10, 3)), \n    index=np.random.choice('a b c'.split(), 10),\n    columns='x y z'.split()\n)\ndf.head()\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\nc\n5\n6\n9\n\n\na\n1\n3\n9\n\n\nb\n8\n2\n4\n\n\n\n\n\n\n\n\nclass DataFrameDataSetTest(BaseDataFrameDataset):\n    pass\n\n\nds = DataFrameDataSetTest(df)\n\n\nds.iloc[0]\n\nx    7\ny    5\nz    7\nName: b, dtype: int64\n\n\n\nds.cloc[0]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\n\n\n\n\n\n\nds.cloc.cindex.get_indexer_for(['a'])\n\narray([1, 3])\n\n\n\nds.cloc.icat(0)\n\n['a']\n\n\n\nds.loc['a']\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\n\n\n\n\n\n\nds.iloc[:2]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\n\n\n\n\n\n\nds.cloc.cindex.categories[:2]\n\nIndex(['a', 'b'], dtype='object')\n\n\n\nds.loc[['a', 'b']]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.loc[pd.Index(['a', 'b'])]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.loc[['a', 'b']]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.df.iloc[ds.cloc.cindex.get_indexer_for(['a', 'b'])]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n7\n5\n7\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.cloc[pd.Index(['a', 'b'])]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n7\n5\n7\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.cloc[:2]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n7\n5\n7\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4"
+  },
+  {
+    "objectID": "abc/dfds/base.html#base-dfset",
+    "href": "abc/dfds/base.html#base-dfset",
+    "title": "Dataset Base and Meta",
+    "section": "",
+    "text": "source\n\n\n\n BaseDataFrameDataset (df:pandas.core.frame.DataFrame=&lt;factory&gt;)\n\n\n\n\ndf = pd.DataFrame(\n    np.random.randint(0, 10, (10, 3)), \n    index=np.random.choice('a b c'.split(), 10),\n    columns='x y z'.split()\n)\ndf.head()\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\nc\n5\n6\n9\n\n\na\n1\n3\n9\n\n\nb\n8\n2\n4\n\n\n\n\n\n\n\n\nclass DataFrameDataSetTest(BaseDataFrameDataset):\n    pass\n\n\nds = DataFrameDataSetTest(df)\n\n\nds.iloc[0]\n\nx    7\ny    5\nz    7\nName: b, dtype: int64\n\n\n\nds.cloc[0]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\n\n\n\n\n\n\nds.cloc.cindex.get_indexer_for(['a'])\n\narray([1, 3])\n\n\n\nds.cloc.icat(0)\n\n['a']\n\n\n\nds.loc['a']\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\n\n\n\n\n\n\nds.iloc[:2]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\n\n\n\n\n\n\nds.cloc.cindex.categories[:2]\n\nIndex(['a', 'b'], dtype='object')\n\n\n\nds.loc[['a', 'b']]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.loc[pd.Index(['a', 'b'])]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.loc[['a', 'b']]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\nb\n7\n5\n7\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.df.iloc[ds.cloc.cindex.get_indexer_for(['a', 'b'])]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n7\n5\n7\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.cloc[pd.Index(['a', 'b'])]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n7\n5\n7\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4\n\n\n\n\n\n\n\n\nds.cloc[:2]\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9\n\n\nb\n7\n5\n7\n\n\nb\n8\n2\n4\n\n\nb\n0\n9\n2\n\n\nb\n2\n3\n4"
+  },
+  {
+    "objectID": "abc/idxs/base.html",
+    "href": "abc/idxs/base.html",
+    "title": "BaseDataFrameDatasetIndexer",
+    "section": "",
+    "text": "source\n\n\n\n BaseDataFrameDatasetIndexer (dataset)"
+  },
+  {
+    "objectID": "abc/idxs/base.html#basedataframedatasetindex",
+    "href": "abc/idxs/base.html#basedataframedatasetindex",
+    "title": "BaseDataFrameDatasetIndexer",
+    "section": "",
+    "text": "source\n\n\n\n BaseDataFrameDatasetIndexer (dataset)"
+  },
+  {
+    "objectID": "abc/idxs/meta.html",
+    "href": "abc/idxs/meta.html",
+    "title": "MetaDataFrameDatasetIndexer",
+    "section": "",
+    "text": "source\n\n\n\n MetaDataFrameDatasetIndexer (name, bases, namespace, **kwargs)\n\nMetaclass for defining Abstract Base Classes (ABCs).\nUse this metaclass to create an ABC. An ABC can be subclassed directly, and then acts as a mix-in class. You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as ‘virtual subclasses’ – these and their descendants will be considered subclasses of the registering ABC by the built-in issubclass() function, but the registering ABC won’t show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via super())."
+  },
+  {
+    "objectID": "abc/idxs/meta.html#metadataframedatasetindexer",
+    "href": "abc/idxs/meta.html#metadataframedatasetindexer",
+    "title": "MetaDataFrameDatasetIndexer",
+    "section": "",
+    "text": "source\n\n\n\n MetaDataFrameDatasetIndexer (name, bases, namespace, **kwargs)\n\nMetaclass for defining Abstract Base Classes (ABCs).\nUse this metaclass to create an ABC. An ABC can be subclassed directly, and then acts as a mix-in class. You can also register unrelated concrete classes (even built-in classes) and unrelated ABCs as ‘virtual subclasses’ – these and their descendants will be considered subclasses of the registering ABC by the built-in issubclass() function, but the registering ABC won’t show up in their MRO (Method Resolution Order) nor will method implementations defined by the registering ABC be callable (not even via super())."
+  },
+  {
+    "objectID": "abc/dfdm/base.html",
+    "href": "abc/dfdm/base.html",
+    "title": "Dataset Base and Meta",
+    "section": "",
+    "text": "source\n\n\n\n BaseDataFrameDataModule (df:pandas.core.frame.DataFrame=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n set_dataset (DatasetClass:Any=&lt;class\n              'litds.abc.dfds.base.BaseDataFrameDataset'&gt;)\n\n\n\n\n\ndf = pd.DataFrame(\n    np.random.randint(0, 10, (10, 3)), \n    index=np.random.choice('a b c'.split(), 10),\n    columns='x y z'.split()\n)\ndf.head()\n\n\n@set_dataset(BaseDataFrameDataset)\nclass DFModuleTest(BaseDataFrameDataModule):\n    pass\n\n\ndm = DFModuleTest(df=df)\n\n\ndm.setup()\n\nDataFrameDataModuleTest()\n\n\n\nds = dm.make_dataset()\n\n\nds.loc['a']\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9"
+  },
+  {
+    "objectID": "abc/dfdm/base.html#datamodules",
+    "href": "abc/dfdm/base.html#datamodules",
+    "title": "Dataset Base and Meta",
+    "section": "",
+    "text": "source\n\n\n\n BaseDataFrameDataModule (df:pandas.core.frame.DataFrame=&lt;factory&gt;)\n\n\nsource\n\n\n\n\n set_dataset (DatasetClass:Any=&lt;class\n              'litds.abc.dfds.base.BaseDataFrameDataset'&gt;)\n\n\n\n\n\ndf = pd.DataFrame(\n    np.random.randint(0, 10, (10, 3)), \n    index=np.random.choice('a b c'.split(), 10),\n    columns='x y z'.split()\n)\ndf.head()\n\n\n@set_dataset(BaseDataFrameDataset)\nclass DFModuleTest(BaseDataFrameDataModule):\n    pass\n\n\ndm = DFModuleTest(df=df)\n\n\ndm.setup()\n\nDataFrameDataModuleTest()\n\n\n\nds = dm.make_dataset()\n\n\nds.loc['a']\n\n\n\n\n\n\n\n\nx\ny\nz\n\n\n\n\na\n0\n9\n0\n\n\na\n1\n3\n9"
+  },
+  {
+    "objectID": "core/dfdm.html",
+    "href": "core/dfdm.html",
+    "title": "DataFrameDataModule",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameDataModule (df:pandas.core.frame.DataFrame=&lt;factory&gt;,\n                      label_key:str='label', batch_size:Optional[int]=64,\n                      include_time:Optional[bool]=False,\n                      device:Optional[littyping.device.Device]=None)\n\n\ndf = MockTimeSeries(set_index=True).df\ndf = df.reset_index().drop(columns='series')\ndf.head()\n\n\ndfm = DataFrameDataModule(df=df, label_key='time')\n\n\ndfm.df.head()\n\n\n\n\n\n\n\n\ntime\nfeature_0\nfeature_1\nfeature_2\n\n\n\n\n0\n0\n4\n8\n0\n\n\n1\n1\n0\n0\n0\n\n\n2\n2\n0\n2\n2\n\n\n3\n3\n6\n0\n4\n\n\n4\n4\n7\n4\n3\n\n\n\n\n\n\n\n\nfor b in dfm.train_dataloader():\n    break\nb[0].shape, b[1].shape\n\n(torch.Size([3, 9, 3]), torch.Size([3, 9]))\n\n\n\ndfm.train_ds.df.shape\n\n(23, 4)"
+  },
+  {
+    "objectID": "core/dfdm.html#dataframedatamodule",
+    "href": "core/dfdm.html#dataframedatamodule",
+    "title": "DataFrameDataModule",
+    "section": "",
+    "text": "source\n\n\n\n DataFrameDataModule (df:pandas.core.frame.DataFrame=&lt;factory&gt;,\n                      label_key:str='label', batch_size:Optional[int]=64,\n                      include_time:Optional[bool]=False,\n                      device:Optional[littyping.device.Device]=None)\n\n\ndf = MockTimeSeries(set_index=True).df\ndf = df.reset_index().drop(columns='series')\ndf.head()\n\n\ndfm = DataFrameDataModule(df=df, label_key='time')\n\n\ndfm.df.head()\n\n\n\n\n\n\n\n\ntime\nfeature_0\nfeature_1\nfeature_2\n\n\n\n\n0\n0\n4\n8\n0\n\n\n1\n1\n0\n0\n0\n\n\n2\n2\n0\n2\n2\n\n\n3\n3\n6\n0\n4\n\n\n4\n4\n7\n4\n3\n\n\n\n\n\n\n\n\nfor b in dfm.train_dataloader():\n    break\nb[0].shape, b[1].shape\n\n(torch.Size([3, 9, 3]), torch.Size([3, 9]))\n\n\n\ndfm.train_ds.df.shape\n\n(23, 4)"
+  },
+  {
+    "objectID": "imps.html",
+    "href": "imps.html",
+    "title": "imps",
+    "section": "",
+    "text": "source\n\nAdataImp\n\n AdataImp (name:str='anndata', nick:Optional[str]=None,\n           subspecs:Optional[List[ForwardRef('ImpSubSpec')]]=&lt;factory&gt;,\n           fallbacks:Optional[Dict[str,Any]]=&lt;factory&gt;, lazy:bool=False,\n           delay:Optional[bool]=False, namespace:Dict[str,Any]=&lt;factory&gt;,\n           _squash_name_errors:Optional[bool]=True,\n           _reload:Optional[bool]=False)"
+  },
+  {
+    "objectID": "named/named_arrays.html",
+    "href": "named/named_arrays.html",
+    "title": "Named Arrays",
+    "section": "",
+    "text": "source\n\nNamedAxis\n\n NamedAxis (name:str, axis:Optional[int]=None)\n\n\nsource\n\n\nNamedAxes\n\n NamedAxes\n            (axes:Union[List[__main__.NamedAxis],Tuple[__main__.NamedAxis]\n            ], name:Optional[str]='NamedAxes')\n\n\nsource\n\n\nNamedArrayDimsError\n\n NamedArrayDimsError (dims=None, ndim=None)\n\nInappropriate argument value (of correct type).\n\nsource\n\n\nNamedArrayDynamicAttrsMixin\n\n NamedArrayDynamicAttrsMixin ()\n\nInitialize self. See help(type(self)) for accurate signature.\n\nsource\n\n\nNamedArray\n\n NamedArray (arr, dims:__main__.NamedAxes=None)\n\nSee: https://numpy.org/doc/stable/user/basics.subclassing.html"
+  }
+]
