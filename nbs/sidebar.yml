@@ -5,72 +5,32 @@ website:
       - 00_types.ipynb
       - 01_utils.ipynb
       - 02_imps.ipynb
-      - XX_template.ipynb
-      - section: abc
+      
+      - section: abc/dfdm
         contents:
-          - section: dfdm
-            contents:
-              - abc/dfdm/00_meta.ipynb
-      - section: abc
+          - abc/dfdm/00_meta.ipynb
+          - abc/dfdm/01_base.ipynb
+      
+      
+      - section: abc/dfds
+        contents:          
+          - abc/dfds/00_meta.ipynb
+          - abc/dfds/01_mixs.ipynb      
+          - abc/dfds/02_base.ipynb
+
+      - section: abc/idxs
+        contents:          
+          - abc/idxs/00_meta.ipynb      
+          - abc/idxs/01_base.ipynb
+          - abc/idxs/03_loc.ipynb      
+          - abc/idxs/04_iloc.ipynb      
+          - abc/idxs/05_cloc.ipynb      
+          - abc/idxs/06__init__.ipynb
+
+      - section: abc/mock
         contents:
-          - section: dfdm
-            contents:
-              - abc/dfdm/01_base.ipynb
-      - section: abc
-        contents:
-          - section: dfds
-            contents:
-              - abc/dfds/00_meta.ipynb
-      - section: abc
-        contents:
-          - section: dfds
-            contents:
-              - abc/dfds/01_mixs.ipynb
-      - section: abc
-        contents:
-          - section: dfds
-            contents:
-              - abc/dfds/02_base.ipynb
-      - section: abc
-        contents:
-          - section: idxs
-            contents:
-              - abc/idxs/00_meta.ipynb
-      - section: abc
-        contents:
-          - section: idxs
-            contents:
-              - abc/idxs/01_base.ipynb
-      - section: abc
-        contents:
-          - section: idxs
-            contents:
-              - abc/idxs/03_loc.ipynb
-      - section: abc
-        contents:
-          - section: idxs
-            contents:
-              - abc/idxs/04_iloc.ipynb
-      - section: abc
-        contents:
-          - section: idxs
-            contents:
-              - abc/idxs/05_cloc.ipynb
-      - section: abc
-        contents:
-          - section: idxs
-            contents:
-              - abc/idxs/06__init__.ipynb
-      - section: abc
-        contents:
-          - section: mock
-            contents:
-              - abc/mock/00_meta.ipynb
-      - section: abc
-        contents:
-          - section: mock
-            contents:
-              - abc/mock/01_base.ipynb
+          - abc/mock/00_meta.ipynb
+          - abc/mock/01_base.ipynb
       - section: core
         contents:
           - core/00_dfds.ipynb
